@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Baloo Bhaijaan 2', cursive;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #b8b8b8ba;
+            margin-bottom: 50px;
+        }
+
+        .topnav a {
+            float: right;
+            display: block;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a.active {
+            background-color: black;
+            color: white;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+
+        .topnav input[type=text] {
+            /* float: right; */
+            float: right;
+            padding: 6px;
+            border: none;
+            margin-top: 8px;
+            margin-right: 16px;
+            font-size: 17px;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 60px;
+            transition: 0.5s;
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: rgb(255, 255, 255, 0.6);
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        #main {
+            transition: margin-left .5s;
+            padding: 20px;
+        }
+
+        .button {
+            display: inline;
+            position: relative;
+            top: 8.5px;
+        }
+
+        .button img {
+            display: inline;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            position: relative;
+            bottom: 2px;
+            left: 3px;
+            cursor: pointer;
+        }
+
+        .choice {
+            width: 75%;
+            margin: auto;
+            padding-top: 55px;
+            text-align: center;
+        }
+
+        .choice h1 {
+            font-size: 45px;
+            font-weight: 600;
+            font-family: 'Baloo Bhaijaan 2', cursive;
+        }
+
+        .choice p {
+            font-size: 15px;
+            font-weight: 300;
+            color: rgb(106, 103, 103);
+            line-height: 10px;
+            padding: 10px;
+            font-family: 'Baloo Bhaijaan 2', cursive;
+        }
+
+        .choice .row {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .choice .info {
+            flex-basis: 50%;
+            /* margin-bottom: 25px; */
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .choice .info img {
+            /* width: 100%; */
+            height: 300px;
+            width: 300px;
+            border-radius: 10px;
+            cursor: pointer;
+            /* padding-bottom: 20px; */
+            transition: all 1s;
+        }
+
+        .choice .info img:hover {
+            box-shadow: 0 0 20px 0 rgb(44, 42, 42);
+
+        }
+
+        .choice .info p {
+            /* font-weight: 700; */
+            margin-top: 20px;
+            font-size: 25px;
+            padding-top: 20px;
+            transition: all 1s;
+        }
+
+        .slideshow-container {
+            max-width: 550px;
+            position: relative;
+            margin: auto;
+        }
+
+        /* Caption text */
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active {
+            background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+            .text {
+                font-size: 11px
+            }
+        }
+
+        footer {
+            /* position: absolute; */
+            bottom: 0;
+            background-color: #0f5735;
+            height: auto;
+            width: 100%;
+            padding-top: 40px;
+            color: white;
+            margin-top: 50px;
+        }
+
+        .contents {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .contents h3 {
+            font-size: 2rem;
+            font-weight: 500;
+            text-transform: capitalize;
+            line-height: 2.5rem;
+        }
+
+        .contents p {
+            max-width: 500px;
+            margin: 10px auto;
+            line-height: 20px;
+            font-size: 15px;
+        }
+
+        .socials {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem 0 2.5rem 0;
+        }
+
+        .socials li {
+            margin: 0 10px;
+        }
+
+        .socials a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .socials a i {
+            font-size: 1.5rem;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .socials a:hover {
+            color: tomato;
+        }
+
+        .bottom {
+            background-color: black;
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .bottom p {
+            font-size: 15px;
+            text-transform: capitalize;
+
+        }
+    </style>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="topnav">
+        <a class="active" href="#">Login</a>
+        <!-- <a href="#">About</a>
+        <a href="#">Contact</a> -->
+        <input type="text" placeholder="Search..">
+        <span class="button" onclick="openNav()">
+            <img src="https://th.bing.com/th/id/OIP.mOiTeeCsJy-Ygn2NE7EixwHaHa?w=216&h=216&c=7&r=0&o=5&dpr=1.25&pid=1.7"
+                alt="">
+        </span>
+    </div>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">Profile</a>
+        <a href="#">Orders</a>
+        <a href="#">Wishlist</a>
+        <a href="#">Reviews</a>
+    </div>
+
+
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <!-- <div class="numbertext">1 / 3</div> -->
+            <img src="https://th.bing.com/th/id/OIP.vclAhIf4HSNrVO4pfCiwbQHaEK?w=288&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                style="width:100%">
+            <!-- <div class="text">Caption Text</div> -->
+        </div>
+
+        <div class="mySlides fade">
+            <!-- <div class="numbertext">2 / 3</div> -->
+            <img src="https://th.bing.com/th/id/OIP.yi6G-VVqzMSxpBFai2M1kQHaEK?w=288&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                style="width:100%">
+            <!-- <div class="text">Caption Two</div> -->
+        </div>
+
+        <div class="mySlides fade">
+            <!-- <div class="numbertext">3 / 3</div> -->
+            <img src="https://th.bing.com/th/id/OIP.9_PFGVMo3gg3Is5L1TXWAgHaEK?w=287&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                style="width:100%">
+            <!-- <div class="text">Caption Three</div> -->
+        </div>
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+    </script>
+
+    <footer>
+        <div class="contents">
+            <h3>Company Name</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla officiis, explicabo et reprehenderit nihil
+                dolores.</p>
+            <ul class="socials">
+                <li><a href="https://www.google.com" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://www.facebook.com" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="https://www.yahoo.com" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://www.twitter.com" target="_blank"><i class="fa fa-youtube"></i></a></li>
+            </ul>
+        </div>
+
+        <div class="bottom">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae libero sunt beatae dolorum
+                molestias assumenda.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

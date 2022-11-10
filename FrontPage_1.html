@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .NameLogo {
+            /* https://www.hoteleventi.com/images/1700-960/2-8563da2e.jpg */
+            height: 100vh;
+            width: 100%;
+            background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(/fantasy_angel_4k_hd.jpg);
+            background-size: 100% 100%;
+            background-attachment: fixed;
+            /* margin-bottom: 40px; */
+        }
+
+        .NameLogo div {
+            display: block;
+        }
+
+        .logo {
+            position: absolute;
+            left: 50%;
+            top: 41%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            animation: slide1;
+            animation-duration: 2s;
+            animation-iteration-count: 1;
+            animation-timing-function: ease-in-out;
+        }
+
+        .companyname {
+            width: 100%;
+            position: absolute;
+            left: 50%;
+            top: 60%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            animation-duration: 1.5s;
+            animation-iteration-count: 1;
+            animation-timing-function: ease-in-out;
+
+        }
+
+        .companyname h1 {
+            color: white;
+            font-size: 50px;
+            font-weight: 600;
+            letter-spacing: 6px;
+            animation: text 3s 1;
+            margin-bottom: 10px;
+            background: rgba(4, 9, 30, 0.01);
+            position: relative;
+            animation: text1 3.5s 1;
+        }
+
+        .companyname p {
+            font-size: 22px;
+            color: white;
+            position: relative;
+            animation: text2 4.5s 1;
+            animation-timing-function: ease-in-out;
+        }
+
+        @keyframes text1 {
+            0% {
+                color: rgba(4, 9, 30, 0.01);
+            }
+
+            35% {
+                color: rgba(4, 9, 30, 0.01);
+
+            }
+
+            50% {
+                letter-spacing: 30px;
+                margin-bottom: -40px;
+            }
+
+            100% {
+                letter-spacing: 6px;
+            }
+        }
+
+        @keyframes text2 {
+
+            0% {
+                color: rgba(4, 9, 30, 0.01)
+            }
+
+            80% {
+                color: rgba(4, 9, 30, 0.01)
+            }
+
+            100% {
+                color: white;
+            }
+
+        }
+
+        .logo img {
+            height: 125px;
+            width: 125px;
+            border-radius: 50%;
+            margin-bottom: -40px;
+        }
+
+        @keyframes slide1 {
+            0% {
+                top: 10%;
+                left: 50%;
+            }
+
+            100% {
+                top: 41%;
+                left: 50%;
+            }
+
+        }
+
+        @keyframes slide2 {
+            0% {
+                top: 90%;
+                left: 20%;
+            }
+
+            100% {
+                top: 52.5%;
+                left: 50%;
+            }
+        }
+
+        footer {
+            /* position: absolute; */
+            bottom: 0;
+            background-color: #0f5735;
+            height: auto;
+            width: 100%;
+            padding-top: 40px;
+            color: white;
+            margin-top: 50px;
+        }
+
+        .contents {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .contents h3 {
+            font-size: 2rem;
+            font-weight: 500;
+            text-transform: capitalize;
+            line-height: 2.5rem;
+        }
+
+        .contents p {
+            max-width: 500px;
+            margin: 10px auto;
+            line-height: 20px;
+            font-size: 15px;
+        }
+
+        .socials {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem 0 2.5rem 0;
+        }
+
+        .socials li {
+            margin: 0 10px;
+        }
+
+        .socials a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .socials a i {
+            font-size: 1.5rem;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .socials a:hover {
+            color: tomato;
+        }
+
+        .bottom {
+            background-color: black;
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .bottom p {
+            font-size: 15px;
+            text-transform: capitalize;
+
+        }
+
+        .choice {
+            width: 75%;
+            margin: auto;
+            padding-top: 55px;
+            text-align: center;
+        }
+
+        .choice h1 {
+            font-size: 45px;
+            font-weight: 600;
+            font-family: 'Baloo Bhaijaan 2', cursive;
+        }
+
+        .choice p {
+            font-size: 15px;
+            font-weight: 300;
+            color: rgb(106, 103, 103);
+            line-height: 10px;
+            padding: 10px;
+            font-family: 'Baloo Bhaijaan 2', cursive;
+        }
+
+        .choice .row {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .choice .info {
+            flex-basis: 50%;
+            /* margin-bottom: 25px; */
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .choice .info img {
+            /* width: 100%; */
+            height: 300px;
+            width: 300px;
+            border-radius: 10px;
+            cursor: pointer;
+            /* padding-bottom: 20px; */
+            transition: all 1s;
+        }
+
+        .choice .info img:hover {
+            box-shadow: 0 0 20px 0 rgb(44, 42, 42);
+
+        }
+
+        .choice .info p {
+            /* font-weight: 700; */
+            margin-top: 20px;
+            font-size: 25px;
+            padding-top: 20px;
+            transition: all 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="NameLogo">
+        <div class="logo">
+            <img
+                src="https://th.bing.com/th/id/OIP.mOiTeeCsJy-Ygn2NE7EixwHaHa?w=216&h=216&c=7&r=0&o=5&dpr=1.25&pid=1.7">
+        </div>
+        <div class="companyname">
+            <h1>TheRobertoItalian</h1>
+            <p>Simply Taste, Simply Better</p>
+        </div>
+    </div>
+
+    <section class="choice">
+        <h1>Explore More</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate, aut.
+        </p>
+        <div class="row">
+            <div class="info">
+                <a href=""><img
+                        src="https://th.bing.com/th/id/OIP.lRAvrMv7X8smQWtYVO8tQQHaHa?pid=ImgDet&w=201&h=201&c=7&dpr=1.3"
+                        alt=""></a>
+                <p>For Him</p>
+            </div>
+            <div class="info">
+                <a href=""><img src="/Screenshot (105).png" alt=""></a>
+                <p>For Her</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="contents">
+            <h3>Company Name</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla officiis, explicabo et reprehenderit nihil
+                dolores.</p>
+            <ul class="socials">
+                <li><a href="https://www.google.com" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://www.facebook.com" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="https://www.yahoo.com" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://www.twitter.com" target="_blank"><i class="fa fa-youtube"></i></a></li>
+            </ul>
+        </div>
+
+        <div class="bottom">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae libero sunt beatae dolorum
+                molestias assumenda.</p>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
